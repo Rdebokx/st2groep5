@@ -1,0 +1,718 @@
+TEST FAILED: "../../../tests/phaseIIIb/adc_10.tst".
+A was expected to be 0xf0, but was 0xf1.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/adc_11.tst".
+A was expected to be 0x33, but was 0x30.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/adc_12.tst".
+A was expected to be 0x33, but was 0x30.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/adc_13.tst".
+A was expected to be 0x0f, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/adc_14.tst".
+A was expected to be 0x69, but was 0x68.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/adc_15.tst".
+A was expected to be 0x2f, but was 0x61.
+TEST FAILED: "../../../tests/phaseIIIb/adc_16.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  adc_add () at instructions.s:107
+#6  0x6018de68 in ?? ()
+#7  0x0804aa03 in decode () at decode.s:38
+Backtrace stopped: frame did not save the PC
+
+TEST SUCCEEDED: "../../../tests/phaseIIIb/adc_1.tst".
+TEST FAILED: "../../../tests/phaseIIIb/adc_2.tst".
+P was expected to include bits 0x40, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/adc_3.tst".
+A was expected to be 0x02, but was 0x03.
+TEST FAILED: "../../../tests/phaseIIIb/adc_4.tst".
+P was expected to include bits 0x80, but was 0x10.
+P was expected to include bits 0x40, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/adc_5.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/adc_6.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/adc_7.tst".
+TEST FAILED: "../../../tests/phaseIIIb/adc_8.tst".
+A was expected to be 0x80, but was 0x81.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/adc_9.tst".
+A was expected to be 0x0a, but was 0x0b.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/and_10.tst".
+TEST FAILED: "../../../tests/phaseIIIb/and_11.tst".
+A was expected to be 0x60, but was 0x69.
+TEST FAILED: "../../../tests/phaseIIIb/and_12.tst".
+A was expected to be 0x20, but was 0x00.
+P was expected not to include bits 0x02, but was 0x12.
+TEST FAILED: "../../../tests/phaseIIIb/and_13.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  do_and () at instructions.s:150
+#6  0x0804aa03 in decode () at decode.s:38
+#7  0x0804b271 in fetchcycle () at fetch.s:35
+#8  0x6018de78 in ?? ()
+#9  0x080520ee in start ()
+Backtrace stopped: frame did not save the PC
+
+TEST FAILED: "../../../tests/phaseIIIb/and_1.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/and_2.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/and_3.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/and_4.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/and_5.tst".
+TEST FAILED: "../../../tests/phaseIIIb/and_6.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/and_7.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/and_8.tst".
+A was expected to be 0x30, but was 0x31.
+TEST FAILED: "../../../tests/phaseIIIb/and_9.tst".
+A was expected to be 0x30, but was 0x31.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/asl_1.tst".
+TEST FAILED: "../../../tests/phaseIIIb/asl_2.tst".
+P was expected to include bits 0x01, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/asl_3.tst".
+P was expected to include bits 0x01, but was 0x12.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/asl_4.tst".
+TEST FAILED: "../../../tests/phaseIIIb/asl_5.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/asl_6.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/asl_7.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/asl_8.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/asl_9.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/clc_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/clv_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/dec_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/dec_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/dec_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/dec_4.tst".
+@FF30 was expected to be 0x02, but was 0x03.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/dec_5.tst".
+TEST FAILED: "../../../tests/phaseIIIb/dec_6.tst".
+@00AA was expected to be 0x02, but was 0x03.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/dex_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/dex_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/dex_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/dey_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/dey_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/dey_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/eor_10.tst".
+A was expected to be 0x0f, but was 0x0e.
+TEST FAILED: "../../../tests/phaseIIIb/eor_11.tst".
+A was expected to be 0xf8, but was 0x96.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/eor_12.tst".
+A was expected to be 0x2f, but was 0x61.
+TEST FAILED: "../../../tests/phaseIIIb/eor_13.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  do_eor () at instructions.s:355
+#6  0x0804aa03 in decode () at decode.s:38
+#7  0x0804b271 in fetchcycle () at fetch.s:35
+#8  0x6018de78 in ?? ()
+#9  0x080520ee in start ()
+Backtrace stopped: frame did not save the PC
+
+TEST FAILED: "../../../tests/phaseIIIb/eor_1.tst".
+A was expected to be 0xf0, but was 0xf1.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/eor_2.tst".
+A was expected to be 0x0f, but was 0x0e.
+TEST FAILED: "../../../tests/phaseIIIb/eor_3.tst".
+A was expected to be 0x0f, but was 0x0e.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/eor_4.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/eor_5.tst".
+TEST FAILED: "../../../tests/phaseIIIb/eor_6.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/eor_7.tst".
+A was expected to be 0xf0, but was 0xf1.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/eor_8.tst".
+A was expected to be 0x33, but was 0xce.
+TEST FAILED: "../../../tests/phaseIIIb/eor_9.tst".
+A was expected to be 0x33, but was 0xce.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/inc_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/inc_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/inc_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/inc_4.tst".
+@FF30 was expected to be 0x04, but was 0x03.
+P was expected not to include bits 0x02, but was 0x12.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/inc_5.tst".
+TEST FAILED: "../../../tests/phaseIIIb/inc_6.tst".
+@00AA was expected to be 0x04, but was 0x03.
+P was expected not to include bits 0x02, but was 0x12.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/inx_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/inx_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/inx_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/iny_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/iny_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/iny_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/lda_10.tst".
+A was expected to be 0xf0, but was 0xff.
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/lda_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/lda_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/lda_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/lda_4.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/lda_5.tst".
+A was expected to be 0xf0, but was 0xff.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/lda_6.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/lda_7.tst".
+A was expected to be 0xf0, but was 0xff.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/lda_8.tst".
+A was expected to be 0x0f, but was 0x40.
+TEST FAILED: "../../../tests/phaseIIIb/lda_9.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  do_lda () at instructions.s:443
+#6  0x0804aa03 in decode () at decode.s:38
+#7  0x0804b271 in fetchcycle () at fetch.s:35
+#8  0x6018de78 in ?? ()
+#9  0x080520ee in start ()
+Backtrace stopped: frame did not save the PC
+
+TEST SUCCEEDED: "../../../tests/phaseIIIb/ldx_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/ldx_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/ldx_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ldx_4.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ldx_5.tst".
+X was expected to be 0xf0, but was 0xff.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ldx_6.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ldx_7.tst".
+X was expected to be 0xf0, but was 0xff.
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/ldy_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/ldy_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/ldy_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ldy_4.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ldy_5.tst".
+Y was expected to be 0xf0, but was 0xff.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ldy_6.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ldy_7.tst".
+Y was expected to be 0xf0, but was 0xff.
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/lsr_1.tst".
+TEST FAILED: "../../../tests/phaseIIIb/lsr_2.tst".
+P was expected to include bits 0x01, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/lsr_3.tst".
+P was expected to include bits 0x01, but was 0x12.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/lsr_4.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/lsr_5.tst".
+TEST FAILED: "../../../tests/phaseIIIb/lsr_6.tst".
+@FF30 was expected to be 0x01, but was 0x02.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/lsr_7.tst".
+TEST FAILED: "../../../tests/phaseIIIb/lsr_8.tst".
+@00AA was expected to be 0x01, but was 0x02.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/lsr_9.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/ora_10.tst".
+TEST FAILED: "../../../tests/phaseIIIb/ora_11.tst".
+A was expected to be 0xf8, but was 0xff.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ora_12.tst".
+A was expected to be 0x2f, but was 0x61.
+TEST FAILED: "../../../tests/phaseIIIb/ora_13.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  do_ora () at instructions.s:558
+#6  0x0804aa03 in decode () at decode.s:38
+#7  0x0804b271 in fetchcycle () at fetch.s:35
+#8  0x6018de78 in ?? ()
+#9  0x080520ee in start ()
+Backtrace stopped: frame did not save the PC
+
+TEST FAILED: "../../../tests/phaseIIIb/ora_1.tst".
+A was expected to be 0xf0, but was 0xf1.
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/ora_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/ora_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ora_4.tst".
+A was expected to be 0x00, but was 0x01.
+P was expected to include bits 0x02, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/ora_5.tst".
+TEST FAILED: "../../../tests/phaseIIIb/ora_6.tst".
+A was expected to be 0x80, but was 0x81.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ora_7.tst".
+A was expected to be 0xf0, but was 0xf1.
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/ora_8.tst".
+A was expected to be 0x33, but was 0xff.
+TEST FAILED: "../../../tests/phaseIIIb/ora_9.tst".
+A was expected to be 0x33, but was 0xff.
+TEST FAILED: "../../../tests/phaseIIIb/pha_1.tst".
+S was expected to be 0xfe, but was 0x01.
+@01FF was expected to be 0x0a, but was 0xff.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/pha_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/php_1.tst".
+@01FF was expected to be 0x81, but was 0xff.
+S was expected to be 0xfe, but was 0x01.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/php_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/pla_1.tst".
+S was expected to be 0xff, but was 0x02.
+TEST FAILED: "../../../tests/phaseIIIb/pla_2.tst".
+S was expected to be 0x00, but was 0x03.
+TEST FAILED: "../../../tests/phaseIIIb/plp_1.tst".
+S was expected to be 0xff, but was 0x02.
+TEST FAILED: "../../../tests/phaseIIIb/plp_2.tst".
+S was expected to be 0x00, but was 0x03.
+TEST FAILED: "../../../tests/phaseIIIb/rol_1.tst".
+@FF00 was expected to be 0x02, but was 0x01.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/rol_2.tst".
+@FF00 was expected to be 0x02, but was 0x81.
+TEST FAILED: "../../../tests/phaseIIIb/rol_3.tst".
+@FF00 was expected to be 0x00, but was 0x80.
+P was expected to include bits 0x02, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/rol_4.tst".
+@FF00 was expected to be 0x01, but was 0x80.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/rol_5.tst".
+@FF00 was expected to be 0x80, but was 0x40.
+P was expected to include bits 0x80, but was 0x11.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/rol_6.tst".
+@FF30 was expected to be 0x02, but was 0x01.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/rol_7.tst".
+@0030 was expected to be 0x02, but was 0x01.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/rol_8.tst".
+@00AA was expected to be 0x02, but was 0x01.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/rol_9.tst".
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/ror_1.tst".
+@FF00 was expected to be 0x01, but was 0x02.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/ror_2.tst".
+@FF00 was expected to be 0x40, but was 0x81.
+P was expected not to include bits 0x02, but was 0x13.
+TEST FAILED: "../../../tests/phaseIIIb/ror_3.tst".
+@FF00 was expected to be 0x00, but was 0x01.
+P was expected to include bits 0x02, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/ror_4.tst".
+@FF00 was expected to be 0x80, but was 0x01.
+P was expected to include bits 0x80, but was 0x11.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/ror_5.tst".
+@FF00 was expected to be 0x80, but was 0x03.
+P was expected to include bits 0x80, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/ror_6.tst".
+@FF30 was expected to be 0x01, but was 0x02.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/ror_7.tst".
+@0030 was expected to be 0x01, but was 0x02.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/ror_8.tst".
+@00AA was expected to be 0x01, but was 0x02.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/ror_9.tst".
+A was expected to be 0x01, but was 0x81.
+P was expected not to include bits 0x01, but was 0x11.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_10.tst".
+A was expected to be 0x00, but was 0xff.
+P was expected to include bits 0x02, but was 0x91.
+P was expected not to include bits 0x80, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_11.tst".
+A was expected to be 0x00, but was 0xff.
+P was expected to include bits 0x02, but was 0x91.
+P was expected not to include bits 0x80, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_12.tst".
+A was expected to be 0x00, but was 0xff.
+P was expected to include bits 0x02, but was 0x91.
+P was expected not to include bits 0x80, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_13.tst".
+A was expected to be 0x00, but was 0xff.
+P was expected to include bits 0x02, but was 0x91.
+P was expected not to include bits 0x80, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_14.tst".
+A was expected to be 0x00, but was 0xff.
+P was expected to include bits 0x02, but was 0x91.
+P was expected not to include bits 0x80, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_15.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  sbc_sub () at instructions.s:835
+#6  0x6018de68 in ?? ()
+#7  0x0804aa03 in decode () at decode.s:38
+Backtrace stopped: frame did not save the PC
+
+TEST FAILED: "../../../tests/phaseIIIb/sbc_16.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  sbc_sub () at instructions.s:835
+#6  0x6018de68 in ?? ()
+#7  0x0804aa03 in decode () at decode.s:38
+Backtrace stopped: frame did not save the PC
+
+TEST FAILED: "../../../tests/phaseIIIb/sbc_17.tst".
+A was expected to be 0x85, but was 0x84.
+P was expected not to include bits 0x01, but was 0x91.
+P was expected to include bits 0x40, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_18.tst".
+A was expected to be 0x7f, but was 0x80.
+P was expected not to include bits 0x80, but was 0x91.
+P was expected not to include bits 0x01, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_19.tst".
+A was expected to be 0x80, but was 0x7f.
+P was expected not to include bits 0x01, but was 0x91.
+P was expected to include bits 0x40, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_1.tst".
+A was expected to be 0x01, but was 0x00.
+P was expected not to include bits 0x80, but was 0x90.
+P was expected to include bits 0x01, but was 0x90.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_20.tst".
+A was expected to be 0x7f, but was 0x80.
+P was expected not to include bits 0x80, but was 0x90.
+P was expected to include bits 0x01, but was 0x90.
+P was expected to include bits 0x40, but was 0x90.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_21.tst".
+A was expected to be 0x80, but was 0x7f.
+P was expected to include bits 0x01, but was 0x90.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_2.tst".
+A was expected to be 0x10, but was 0x0f.
+P was expected not to include bits 0x80, but was 0x90.
+P was expected to include bits 0x01, but was 0x90.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_3.tst".
+A was expected to be 0x00, but was 0x01.
+P was expected to include bits 0x02, but was 0x90.
+P was expected not to include bits 0x80, but was 0x90.
+P was expected to include bits 0x01, but was 0x90.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_4.tst".
+A was expected to be 0xff, but was 0xfe.
+P was expected not to include bits 0x01, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_5.tst".
+A was expected to be 0x84, but was 0x83.
+P was expected to include bits 0x01, but was 0x90.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_6.tst".
+A was expected to be 0x00, but was 0xff.
+P was expected to include bits 0x02, but was 0x91.
+P was expected not to include bits 0x80, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_7.tst".
+A was expected to be 0xf6, but was 0xf5.
+P was expected not to include bits 0x01, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_8.tst".
+P was expected not to include bits 0x01, but was 0x91.
+TEST FAILED: "../../../tests/phaseIIIb/sbc_9.tst".
+A was expected to be 0x00, but was 0xff.
+P was expected to include bits 0x02, but was 0x91.
+P was expected not to include bits 0x80, but was 0x91.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/sec_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/sta_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/sta_2.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/sta_3.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/sta_4.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/sta_5.tst".
+TEST FAILED: "../../../tests/phaseIIIb/sta_6.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  do_sta () at instructions.s:927
+#6  0x0804aa03 in decode () at decode.s:38
+#7  0x0804b271 in fetchcycle () at fetch.s:35
+#8  0x6018de78 in ?? ()
+#9  0x080520ee in start ()
+Backtrace stopped: frame did not save the PC
+
+TEST FAILED: "../../../tests/phaseIIIb/sta_7.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  do_sta () at instructions.s:927
+#6  0x0804aa03 in decode () at decode.s:38
+#7  0x0804b271 in fetchcycle () at fetch.s:35
+#8  0x6018de78 in ?? ()
+#9  0x080520ee in start ()
+Backtrace stopped: frame did not save the PC
+
+TEST SUCCEEDED: "../../../tests/phaseIIIb/stx_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/stx_2.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/stx_3.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/sty_1.tst".
+TEST FAILED: "../../../tests/phaseIIIb/sty_2.tst".
+The emulator created a segmentation fault.
+Stack trace (useful data is below the signal handler):
+Using host libthread_db library "/lib/libthread_db.so.1".
+0xffffe410 in __kernel_vsyscall ()
+
+Program received signal SIGSTOP, Stopped (signal).
+0xffffe410 in __kernel_vsyscall ()
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0x400e88b0 in nanosleep () from /lib/libc.so.6
+#2  0x400e86b7 in sleep () from /lib/libc.so.6
+#3  0x0804dfc8 in _00_endlessLoop (signum=10) at src/test.c:895
+#4  <signal handler called>
+#5  do_sta () at instructions.s:927
+#6  0x0804aa03 in decode () at decode.s:38
+#7  0x0804b271 in fetchcycle () at fetch.s:35
+#8  0x6018de78 in ?? ()
+#9  0x080520ee in start ()
+Backtrace stopped: frame did not save the PC
+
+TEST SUCCEEDED: "../../../tests/phaseIIIb/sty_3.tst".
+TEST FAILED: "../../../tests/phaseIIIb/tax_1.tst".
+X was expected to be 0x0a, but was 0x05.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/tax_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/tax_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST FAILED: "../../../tests/phaseIIIb/tay_1.tst".
+Y was expected to be 0x0a, but was 0x05.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/tay_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/tay_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/tsx_1.tst".
+TEST FAILED: "../../../tests/phaseIIIb/tsx_2.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/txa_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/txa_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/txa_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+TEST SUCCEEDED: "../../../tests/phaseIIIb/txs_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/tya_1.tst".
+TEST SUCCEEDED: "../../../tests/phaseIIIb/tya_2.tst".
+TEST FAILED: "../../../tests/phaseIIIb/tya_3.tst".
+P was expected to include bits 0x80, but was 0x10.
+Tests succeeded: 67. Tests failed: 132.
+Failed tests:
+../../../tests/phaseIIIb/adc_10.tst
+../../../tests/phaseIIIb/adc_11.tst
+../../../tests/phaseIIIb/adc_12.tst
+../../../tests/phaseIIIb/adc_13.tst
+../../../tests/phaseIIIb/adc_14.tst
+../../../tests/phaseIIIb/adc_15.tst
+../../../tests/phaseIIIb/adc_16.tst
+../../../tests/phaseIIIb/adc_2.tst
+../../../tests/phaseIIIb/adc_3.tst
+../../../tests/phaseIIIb/adc_4.tst
+../../../tests/phaseIIIb/adc_5.tst
+../../../tests/phaseIIIb/adc_8.tst
+../../../tests/phaseIIIb/adc_9.tst
+../../../tests/phaseIIIb/and_11.tst
+../../../tests/phaseIIIb/and_12.tst
+../../../tests/phaseIIIb/and_13.tst
+../../../tests/phaseIIIb/and_1.tst
+../../../tests/phaseIIIb/and_6.tst
+../../../tests/phaseIIIb/and_7.tst
+../../../tests/phaseIIIb/and_8.tst
+../../../tests/phaseIIIb/and_9.tst
+../../../tests/phaseIIIb/asl_2.tst
+../../../tests/phaseIIIb/asl_3.tst
+../../../tests/phaseIIIb/asl_5.tst
+../../../tests/phaseIIIb/dec_3.tst
+../../../tests/phaseIIIb/dec_4.tst
+../../../tests/phaseIIIb/dec_6.tst
+../../../tests/phaseIIIb/dex_3.tst
+../../../tests/phaseIIIb/dey_3.tst
+../../../tests/phaseIIIb/eor_10.tst
+../../../tests/phaseIIIb/eor_11.tst
+../../../tests/phaseIIIb/eor_12.tst
+../../../tests/phaseIIIb/eor_13.tst
+../../../tests/phaseIIIb/eor_1.tst
+../../../tests/phaseIIIb/eor_2.tst
+../../../tests/phaseIIIb/eor_3.tst
+../../../tests/phaseIIIb/eor_6.tst
+../../../tests/phaseIIIb/eor_7.tst
+../../../tests/phaseIIIb/eor_8.tst
+../../../tests/phaseIIIb/eor_9.tst
+../../../tests/phaseIIIb/inc_3.tst
+../../../tests/phaseIIIb/inc_4.tst
+../../../tests/phaseIIIb/inc_6.tst
+../../../tests/phaseIIIb/inx_3.tst
+../../../tests/phaseIIIb/iny_3.tst
+../../../tests/phaseIIIb/lda_10.tst
+../../../tests/phaseIIIb/lda_3.tst
+../../../tests/phaseIIIb/lda_4.tst
+../../../tests/phaseIIIb/lda_5.tst
+../../../tests/phaseIIIb/lda_6.tst
+../../../tests/phaseIIIb/lda_7.tst
+../../../tests/phaseIIIb/lda_8.tst
+../../../tests/phaseIIIb/lda_9.tst
+../../../tests/phaseIIIb/ldx_3.tst
+../../../tests/phaseIIIb/ldx_4.tst
+../../../tests/phaseIIIb/ldx_5.tst
+../../../tests/phaseIIIb/ldx_6.tst
+../../../tests/phaseIIIb/ldx_7.tst
+../../../tests/phaseIIIb/ldy_3.tst
+../../../tests/phaseIIIb/ldy_4.tst
+../../../tests/phaseIIIb/ldy_5.tst
+../../../tests/phaseIIIb/ldy_6.tst
+../../../tests/phaseIIIb/ldy_7.tst
+../../../tests/phaseIIIb/lsr_2.tst
+../../../tests/phaseIIIb/lsr_3.tst
+../../../tests/phaseIIIb/lsr_6.tst
+../../../tests/phaseIIIb/lsr_8.tst
+../../../tests/phaseIIIb/ora_11.tst
+../../../tests/phaseIIIb/ora_12.tst
+../../../tests/phaseIIIb/ora_13.tst
+../../../tests/phaseIIIb/ora_1.tst
+../../../tests/phaseIIIb/ora_3.tst
+../../../tests/phaseIIIb/ora_4.tst
+../../../tests/phaseIIIb/ora_6.tst
+../../../tests/phaseIIIb/ora_7.tst
+../../../tests/phaseIIIb/ora_8.tst
+../../../tests/phaseIIIb/ora_9.tst
+../../../tests/phaseIIIb/pha_1.tst
+../../../tests/phaseIIIb/php_1.tst
+../../../tests/phaseIIIb/pla_1.tst
+../../../tests/phaseIIIb/pla_2.tst
+../../../tests/phaseIIIb/plp_1.tst
+../../../tests/phaseIIIb/plp_2.tst
+../../../tests/phaseIIIb/rol_1.tst
+../../../tests/phaseIIIb/rol_2.tst
+../../../tests/phaseIIIb/rol_3.tst
+../../../tests/phaseIIIb/rol_4.tst
+../../../tests/phaseIIIb/rol_5.tst
+../../../tests/phaseIIIb/rol_6.tst
+../../../tests/phaseIIIb/rol_7.tst
+../../../tests/phaseIIIb/rol_8.tst
+../../../tests/phaseIIIb/rol_9.tst
+../../../tests/phaseIIIb/ror_1.tst
+../../../tests/phaseIIIb/ror_2.tst
+../../../tests/phaseIIIb/ror_3.tst
+../../../tests/phaseIIIb/ror_4.tst
+../../../tests/phaseIIIb/ror_5.tst
+../../../tests/phaseIIIb/ror_6.tst
+../../../tests/phaseIIIb/ror_7.tst
+../../../tests/phaseIIIb/ror_8.tst
+../../../tests/phaseIIIb/ror_9.tst
+../../../tests/phaseIIIb/sbc_10.tst
+../../../tests/phaseIIIb/sbc_11.tst
+../../../tests/phaseIIIb/sbc_12.tst
+../../../tests/phaseIIIb/sbc_13.tst
+../../../tests/phaseIIIb/sbc_14.tst
+../../../tests/phaseIIIb/sbc_15.tst
+../../../tests/phaseIIIb/sbc_16.tst
+../../../tests/phaseIIIb/sbc_17.tst
+../../../tests/phaseIIIb/sbc_18.tst
+../../../tests/phaseIIIb/sbc_19.tst
+../../../tests/phaseIIIb/sbc_1.tst
+../../../tests/phaseIIIb/sbc_20.tst
+../../../tests/phaseIIIb/sbc_21.tst
+../../../tests/phaseIIIb/sbc_2.tst
+../../../tests/phaseIIIb/sbc_3.tst
+../../../tests/phaseIIIb/sbc_4.tst
+../../../tests/phaseIIIb/sbc_5.tst
+../../../tests/phaseIIIb/sbc_6.tst
+../../../tests/phaseIIIb/sbc_7.tst
+../../../tests/phaseIIIb/sbc_8.tst
+../../../tests/phaseIIIb/sbc_9.tst
+../../../tests/phaseIIIb/sta_6.tst
+../../../tests/phaseIIIb/sta_7.tst
+../../../tests/phaseIIIb/sty_2.tst
+../../../tests/phaseIIIb/tax_1.tst
+../../../tests/phaseIIIb/tax_3.tst
+../../../tests/phaseIIIb/tay_1.tst
+../../../tests/phaseIIIb/tay_3.tst
+../../../tests/phaseIIIb/tsx_2.tst
+../../../tests/phaseIIIb/txa_3.tst
+../../../tests/phaseIIIb/tya_3.tst
+

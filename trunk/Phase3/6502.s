@@ -34,6 +34,14 @@ start:
 	pushl 	%ebp				#Prologue
 	movl  	%esp,%ebp
 
+	#clear all the 6502 registers; PC will be initialized in initPC
+	movb	$0, S
+	movb	$0, A
+	movb	$0, X
+	movb	$0, Y
+	movb	$0, IR
+	movb	$0, P
+	
 	call 	readprog			#load the program in Memory
 	call	initpc				#initialize the PC
 

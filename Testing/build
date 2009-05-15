@@ -1,0 +1,11 @@
+#!/bin/bash
+bin=$@
+
+if [ -f "$bin" ]
+then
+	./dasm $bin -oimage.bin
+	cp image.bin  /home/jvanderwaa/St2groep5/Phase3
+#	cp image.bin ~/Dropbox/Tudelft/St2groep5/Phase3
+else
+	echo "the given file doesn't exist"
+fi

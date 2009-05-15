@@ -1,0 +1,57 @@
+Schrijf hier de opcodes uit de foutreport die je hebt gefixed/claimed
+
+Jelle:
+LDA werkt ik kan nu een var in the Accumulator gooien ^^ alleen  , TXA, TYA zal ik ook even testen, zeg maar alles met de accumulator
+PHA , push accumulator on stack werkt  stackwaarde veranderd van 0xff naar 0xfe alleen als ik daarvoor de accumulator leeg, word die waarde niet veranderd naar de oorspronkelijk toen ik hem pushte
+
+Registers test ik ook wel ff, INX, INY werkt
+
+
+Gerbert (09/05/09):
+De rel addressing mode kwam niet door de testsuite van vanochtend/vanmiddag. Ik heb deze (denk ik) gefixt door pc+offset +1 te nemen ipv pc+offset zonder +1. (dit staat in de manual dat het wel moet)
+We kunnen dit helaas alleen maar in de testsuite testen. Wellicht kan Jelle nadat hij de instructies die hij heeft gefixt aan Frank vragen om hem nog eens door de testsuite te halen.
+
+PLA gefixt. Ik dacht dat je ook nog de 0x01 high memory page moet toevoegen aan de stack, maar weet dat niet zkr en heb deze gecomment. Moet nog getest worden!
+
+**********************************************************************************************
+******************************* TESTED : this instructions are tested and work ***************
+**********************************************************************************************
+-LSR van accumulator
+-PLA
+-PHA
+-LDA
+-TAX
+-TAY
+-DEX
+-DEY
+-TYA
+-TXA
+-TXS
+-TSX
+-DEX
+-DEY
+-LDX
+-LDY
+-DEC
+
+***********************************************************************************************
+** BUGS: **************************************************************************************
+***********************************************************************************************
+-Program counter fail bij fetch_acc
+rel is als het goed is gefixt . 
+INC
+SLR
+
+
+
+
+Roy: 
+0x00, 08, 0A en alle andere die fout geven met PC
+
+Gerbert:
+CPX, CPY en BIT werken nog niet, maar deze zijn phase 4: stubs maken voor in phase3
+
+
+TODO: (diversen)
+Ik heb in operand fetch overal de pc laten incrementen, ipv in decode (anders werd pc ook geincrement bij none als fetch instructie...)
+Dit heb ik alleen wel steeds op lege regels gedaan. Om het overzichtelijk te maken moeten we overal boven "incw	PC" een witregel zetten...

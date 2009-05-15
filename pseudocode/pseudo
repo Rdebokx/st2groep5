@@ -1,0 +1,5 @@
+load 	(IR), %eax		#laadt het adres van de tabel
+incw	PC			#PC moet naar volgende instructie verwijzen
+call	TABLE( [%eax] [0])	#roept de functie aan die op de eerste plek op de opgegeven regel staat (de fetch functie)
+call	TABLE( [%eax] [1])	#roept de functie aan die op de tweede plek op de opgegeven regel staat (de execure functie)
+

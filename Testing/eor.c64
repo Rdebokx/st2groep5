@@ -1,0 +1,11 @@
+
+	processor 6502
+	org 8000
+
+	lda 	#$01  		; store one in the accumulator
+	sta	$50 		; store on in the memory addres 8020
+	lda	#$03		; store 3 in A
+	eor	$50		; perform xor with memory and A
+	dc 	$db ; runs the stop code
+		
+

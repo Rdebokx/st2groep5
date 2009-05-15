@@ -1,0 +1,8 @@
+	; a c64 assembly program to test anything with the registers  INX, INY 
+
+	processor 6502 ; use the 6502 processor
+	org 	$8000 ; jump to addres 8000 , so that i doesnt run in registers
+	
+	INC
+	; STP  stop the processor
+	dc 	$db ; runs the stop code

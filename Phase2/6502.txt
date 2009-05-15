@@ -1,0 +1,15 @@
+De psuedocode voor 6502
+
+reserve 0xffff
+for ( i = 0 ; i < 8 ; i++)
+
+{
+	pushl $0 (stack pointer word ook verhoogd)
+}
+
+Stack (S) = 0x01FF
+call initpc
+
+initpc:
+	set stackpointer (pc) to fffc
+	return

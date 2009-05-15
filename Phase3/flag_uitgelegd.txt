@@ -1,0 +1,36 @@
+Er zijn 8 bits bijvoorbeeld:
+orginele	10101010 
+
+Je wilt weten of bit 6 true of false is zo doe je dat:
+je vergelijkt de orginele met deze byte 	00000100
+Dit doe je met de andb instructie
+
+orgineel	10101010
+		00000100
+je krijgt eruit:00000000
+Dit is gelijk aan nul dus flag niet gezet anders wel gezet
+
+
+
+Setten van een flag (voorbeeld met 6de)
+orgineel		10101010
+			00000100
+met de or instructie	10101110
+
+
+
+
+Resetten van een flag (voorbeeld met de 6de)
+orgineel		10101110
+			11111011
+met de and instructie	10101010
+
+
+
+and instructie	=	andb
+or instructie	=	orb
+
+vergelijk met 0 = 	cmpb, 	$0, BYTE
+			je	flag niet gezet
+			jne	flag gezet
+			Gebruik een van de twee.... DUHH

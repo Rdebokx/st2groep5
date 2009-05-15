@@ -1,0 +1,11 @@
+Debug.txt psueocode
+
+outputr    A: %x, X: %x, Y: %x, PC: %x, S: %x, IR %x, P: %x
+
+showi : (deze subroutine print de PC , OPcode in hexidecimal )
+
+	push register A, X , Y , PC, S , IR, P
+	push outputstr
+	printf
+	
+	subl 4

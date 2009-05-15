@@ -1,0 +1,68 @@
+Al geimpelementeerd
+-ADC
+-AND
+-ASL
+-BIT
+-CLC
+-CLD --hoeft niet?
+-CLV
+-CMP --hoeft niet?
+-CPX --hoeft niet?
+-CPY --hoeft niet?
+-DEC
+-DEX
+-DEY
+-EOR
+-INC
+-INX
+-INY
+-LDA
+-LDX
+-LDY
+-LSR
+-NOP
+-ORA
+-PHA
+-PHP
+-PLA
+-PLP
+-ROL 
+-ROR
+-SBC
+-SEC
+-STA
+-STP
+-STX
+-STY
+-TAX
+-TAY
+-TSX
+-TXA
+-TXS
+-TYA
+
+
+TODO Fase 3: Zet je naam erachter als je iets claimt
+
+Volgens mij kan operand_fetch-stub.s weg?? klopt dat? dan moeten we die ff verwijderen en ook van de svn halen
+--Roy
+
+We moeten ook nog van die mooie kadertjes bij de fetch methodes zetten...
+
+TODO Fase 4:
+-BCC
+-BCS
+-BEQ
+-BMI
+-BNE
+-BPL
+-BRK
+-BVC
+-BVS
+-CLI
+-JMP
+-JSR
+-RTI
+-RTS
+-SED
+-SEI

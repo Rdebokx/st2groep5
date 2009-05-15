@@ -1,0 +1,152 @@
+dc	$7D
+dc	$79
+dc	$69
+dc	$61
+dc	$71
+dc	$65
+dc	$75
+
+dc	$2D
+dc	$3D
+dc	$39
+dc	$29
+dc	$21
+dc	$31
+dc	$25
+dc	$35
+
+dc	$0E
+dc	$1E
+dc	$0A
+dc	$06
+dc	$16
+
+dc	$18
+
+dc	$B8
+
+dc	$CE
+dc	$DE
+dc	$C6
+dc	$D6
+
+dc	$CA
+
+dc	$88
+
+dc	$4D
+dc	$5D
+dc	$59
+dc	$49
+dc	$41
+dc	$51
+dc	$45
+dc	$55
+
+dc	$EE
+dc	$FE
+dc	$E6
+dc	$F6
+
+dc	$E8
+
+dc	$C8
+
+dc	$AD
+dc	$BD
+dc	$B9
+dc	$A9
+dc	$A1
+dc	$B1
+dc	$A5
+dc	$B5
+
+dc	$AE
+dc	$BE
+dc	$A2
+dc	$A6
+dc	$B6
+
+dc	$AC
+dc	$BC
+dc	$A0
+dc	$A4
+dc	$B4
+
+dc	$4E
+dc	$5E
+dc	$4A
+dc	$46
+dc	$56
+
+dc	$EA
+
+dc	$0D
+dc	$1D
+dc	$19
+dc	$09
+dc	$01
+dc	$11
+dc	$05
+dc	$15
+
+dc	$48
+
+dc	$08
+
+dc	$68
+
+dc	$28
+
+dc	$2E
+dc	$3E
+dc	$2A
+dc	$26
+dc	$36
+
+dc	$6E
+dc	$7E
+dc	$6A
+dc	$66
+dc	$76
+
+dc	$ED
+dc	$FD
+dc	$F9
+dc	$E9
+dc	$E1
+dc	$F1
+dc	$E5
+dc	$F5
+
+dc	$38
+
+dc	$8D
+dc	$9D
+dc	$99
+dc	$81
+dc	$91
+dc	$85
+dc	$95
+
+dc	$DB
+
+dc	$8E
+dc	$86
+dc	$96
+
+dc	$8C
+dc	$84
+dc	$94
+
+dc	$AA
+
+dc	$A8
+
+dc	$BA
+
+dc	$8A
+
+dc	$9A
+
+dc	$98

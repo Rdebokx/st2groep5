@@ -1,0 +1,31 @@
+	processor 6502
+	org 8000
+
+	lda 	#$00  		; store one in the accumulator
+	sta	$50 		; store on in the memory addres 8020
+	ldx	$50		; store from memory in Y	
+	ldy	$50		; store from memory in Y
+
+	lda 	#$80  		; store one in the accumulator
+	sta	$50 		; store on in the memory addres 8020
+	ldx	$50		; store from memory in Y	
+	ldy	$50		; store from memory in Y
+
+	lda 	#$7F  		; store one in the accumulator
+	sta	$50 		; store on in the memory addres 8020
+	ldx	$50		; store from memory in Y	
+	ldy	$50		; store from memory in Y
+
+	lda 	#$81  		; store one in the accumulator
+	sta	$50 		; store on in the memory addres 8020
+	ldx	$50		; store from memory in Y	
+	ldy	$50		; store from memory in Y
+
+	lda 	#$10  		; store one in the accumulator
+	sta	$50 		; store on in the memory addres 8020
+	ldx	$50		; store from memory in Y	
+	ldy	$50		; store from memory in Y
+
+	dc 	$db ; runs the stop code
+		
+

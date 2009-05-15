@@ -1,0 +1,36 @@
+	; a c64 assembly program to test anything with the registers  INX, INY 
+
+	processor 6502 ; use the 6502 processor
+	org 	$8000 ; jump to addres 8000 , so that i doesnt run in registers
+
+	; <--- this is an comment
+	LDA #$04 	; this operation loads the value 4 in to the accumulator
+	; LDA $04 this would load the value of the memory address at 04 into the accumulator 
+
+	; TEST TAX , TAY
+	TAX  ; test if the value 4 is transfered to the accumulator
+	; TAY  ; test if the value 4 is transefered to the accumulator
+
+	; TEST INY, INX
+	; INY  ; increase the Y register with one , result  Y is 5
+	; INX  ; increase the X register with one , result  X is 5
+
+	; TEST DEX , DEY
+	; DEX 	; decrease the X register with one , result : X is 3
+	; DEY 	; decrease the Y register with one , result : Y is 3
+
+	; TEST TYA, TXA
+	; TYA     ; transfers the Y register to the accumulator, result : A is 3
+	; TXA 	; transfers the X register to the accumulator, result : A is 4
+	
+	; TEST TXS , TYS
+	; TXS 	; the stackpointer should be the value of 4
+	; LDA #$00 ; let the accumulator be zero
+	; TAX 	; transer the value of the accumulator to the X register, result is 0
+	; TSX 	; transer the stack pointer to X , X should become 4
+
+	; TEST ASL
+	; ASL 	; the value of the accumulator is 4 so with an arithmethic shift left i should become 8 
+
+	; STP  stop the processor
+	dc 	$db ; runs the stop code

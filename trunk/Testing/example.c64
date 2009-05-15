@@ -1,0 +1,14 @@
+	; a c64 assembly program to test the instructions , to make a bin run :
+	; ./dasm foo.c64 -oimage.bin from the command line  where foo.c64 is the c64 code you want to test
+	; then copy the image.bin to the dir where your 6502 executable is  
+
+	processor 6502 ; use the 6502 processor
+	org 	$8000 ; jump to addres 8000 , so that i doesnt run in registers
+
+	; <--- this is an comment
+	LDA #$04 	; this operation loads the value 4 in to the accumulator
+	; LDA $04 this would load the value of the memory address at 04 into the accumulator 
+
+
+	; STP  stop the processor
+	dc 	$db ; runs the stop code

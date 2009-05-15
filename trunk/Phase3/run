@@ -1,0 +1,23 @@
+#!/bin/sh
+
+echo "********  check if chroot is running  ************"
+echo
+if [ -f "/var/run/daemons/arch32" ]
+then
+	echo "********          compiling           ************"
+	echo
+	schroot -p -- gcc -o 6502 -m32 -g *.s >> out
+	echo
+	if [  -f 6502  ]; then
+		echo "******* RUNNING 6502 TEST  *******"
+		echo
+		./6502 
+		echo
+		echo "******** Test COMPLETED ********"
+	else
+		echo "**** COMPILING FAILED *****"
+	fi
+else
+	echo "****** please start your chroot *******"
+	echo "****** run sudo /etc/rc.d/arch32 start ****" 
+fi

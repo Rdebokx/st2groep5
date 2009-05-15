@@ -1,0 +1,17 @@
+
+	processor 6502
+	org 8000
+
+	lda 	#$01  		; store one in the accumulator
+	tay 			; store value A in Y
+	tax 			; store value A in X
+	iny 			; increase y register
+	sta 	$8020 		; store on in the memory addres 8020
+	sta 	$8020,x 	; store with X	
+	sta 	$8020,y 	; store with Y
+	sta 	$8100 		; store in 8100
+	sta 	$8100,x
+	sta 	$8300,y
+	stp
+		
+

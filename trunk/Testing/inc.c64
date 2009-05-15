@@ -1,0 +1,9 @@
+	processor 6502
+	org 8000
+
+	lda 	#$01  		; store one in the accumulator
+	sta	$50 		; store on in the memory addres 50
+	inc	$50		; perform increments content of memory
+	dc 	$db ; runs the stop code
+		
+

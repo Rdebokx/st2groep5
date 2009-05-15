@@ -1,0 +1,28 @@
+	; a c64 assembly program to test anything with the accumulator  LDA, TAX , TAY, TXA , TYA
+
+	processor 6502 ; use the 6502 processor
+	org 	$8000 ; jump to addres 8000 , so that i doesnt run in registers
+
+	; <--- this is an comment
+	LDA #$01 	; this operation loads the value 4 in to the accumulator
+	STA $8030
+	LDA #$FF
+	ADC $8030
+	; CARRY FLAG geset
+
+	ADC $8030
+	SBC $8030
+	; STA $8015 
+	; LSR $8015
+	; LSR
+	; TAX 		;  test if the value 4 is transfered to the accumulator
+	; TAY 		; test if the value 4 is transefered to the accumulator
+	; LSR
+
+	; LDA $04 this would load the value of the memory address at 04 into the accumulator 
+
+	; PHA 		 ; push the accumulator on the stack
+	; LDA #$00 	 ; clear the accumulator
+	; PLA 		 ; pull the accumulator from the stack 
+	; STP  stop the processor
+	dc 	$db ; runs the stop code

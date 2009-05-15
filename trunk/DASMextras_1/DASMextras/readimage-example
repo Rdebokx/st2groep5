@@ -1,0 +1,11 @@
+.bss
+mem:		.skip 65536
+
+.data
+filename:	.asciz	"image.bin"
+
+.text
+	pushl	$mem
+	pushl	$filename
+	call	readimage
+	addl	$8,%esp

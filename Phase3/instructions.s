@@ -90,35 +90,40 @@
    # ***********************************************************************
 
 do_adc: 				
-	pushl 	%ebp                    #   push base pointer
-	movl    %esp, %ebp              #   copy stack pointer
+	pushl 	%ebp                    	#   push base pointer
+	movl    %esp, %ebp              	#   copy stack pointer
 	call 	isset_flag_carry
-	cmp	$0,%eax			# check if carry is true
-	je	adc_reset_x86carry	# if so, reset x86 carry to false
-	stc				# set x86 carry
-	jmp	adc_add			# jump to next
+	cmp		$0, %eax		# check if carry is true
+	je		adc_reset_x86carry	# if so, reset x86 carry to false
+	stc					# if not, set x86 carry
+	jmp	adc_add				# jump to next
 
 adc_reset_x86carry:
-	clc				# reset x86 carry
+	clc					# reset x86 carry
 	
 adc_add:
-	movl	$0, %ebx		# clear ebx
-	movl 	8(%ebp) , %ecx		# move the addres of the source to the %ecx
-	movb 	(%ecx), %bl 		# move the value to %bl
-
-	adcb	A,%bl			# add A and memory content with carry
-	movb 	%bl, A	 		# move the result to A
-	jnc		adc_carry_flag_off		# jmp if no carry
+	movl	$0, %eax			# clear eax
+	movl	$0, %ebx			# clear ebx
+	movl 	8(%ebp) , %ecx			# move the addres of the source to the %ecx
+	movb 	(%ecx), %bl 			# move the value to %bl
+	movb	A, %al				# move accumulator to EAX
+	
+	adcb	%al, %bl			# add A and memory content with carry
+	pushf						# push the proccessor state of the intel, so it won't get changed by jumps etc.
+	movb 	%bl, A		 		# move the result to A
+	
+	jnc		adc_carry_flag_off	# jmp if no carry
 	call	set_flag_carry			# else, set carry flag to false
-	jmp		adc_overflow			# and jump to next
+	jmp		adc_overflow		# and jump to next
 	
 adc_carry_flag_off:
 	call	reset_flag_carry		# set carry flag to false
 	
 adc_overflow:
+	popf					# restore processor state of the intel
 	jno		adc_overflow_flag_off	# jmp if no x86 overflow
 	call	set_flag_overflow		# set zero flag to false
-	jmp	adc_end			# jump to next
+	jmp	adc_end				# jump to next
 
 adc_overflow_flag_off:
 	call	reset_flag_overflow		# set zero flag to true
@@ -130,7 +135,7 @@ adc_end:
 
 	movl 	%ebp, %esp     		# Clear local variables from stack.
 	popl 	%ebp           		# Restore caller’s base pointer.
-	ret							# Return.
+	ret				# Return.
 
 
    # ***********************************************************************
@@ -142,18 +147,17 @@ adc_end:
    # ***********************************************************************
 
 do_and: 						
-	pushl	%ebp			# Prolog: push the base pointer
-	movl 	%esp, %ebp 		# and copy stack pointer to EBP.
+	pushl	%ebp				# Prolog: push the base pointer
+	movl 	%esp, %ebp 			# and copy stack pointer to EBP.
 
 	movl	$0, %ebx
-	movl 	8(%ebp) , %ecx	# move the addres of the source to the %ecx
-	movb 	(%ecx), %bl 	# move the value to %bl
-	
-	andb	A, %bl			# AND on A register of C64 ---------DEBUG: eerst de negative en zero flag van de intel setten?
-	movb	%bl, A			#store result in the Accumulator
+	movl 	8(%ebp) , %ecx		# move the addres of the source to the %ecx
+	movb 	(%ecx), %bl 		# move the value to %bl
+
+	andb	%bl, A			#store result in the Accumulator
 	
 	movl	$0, %eax		# clear %eax
-	movl	%ebx, %eax		# move result to %eax, so do_flag_zn can change the flags
+	movb	A, %al			# move result to %eax, so do_flag_zn can change the flags
 	call	do_flag_zn		# set/resset zero and negative flag
 	
 	movl 	%ebp, %esp     	# Clear local variables from stack.
@@ -361,19 +365,19 @@ do_eor:
 	pushl	%ebp				# Prolog: push the base pointer
 	movl 	%esp, %ebp 			# and copy stack pointer to EBP.
 
-	movl 	8(%ebp) , %ecx	# move the addres of the source to the %ecx
-	movl	$0, %ebx		# clear ebx
-	movb 	(%ecx), %bl 	# move the value to %bl
+	movl 	8(%ebp) , %ecx 			# move the addres of the source to the %ecx
+	movl	$0, %ebx			# clear ebx
+	movb 	(%ecx), %bl 			# move the value to %bl
 	
 	movl	$0, %eax			# clear EAX
 	movb	A, %al				# move C64 A Register to eax
-	xorb	%bl, %al				# AND on A register of C64, result is in AL
+	xorb	%bl, %al			# AND on A register of C64, result is in AL
 	movb	%al, A				# Move result to A
 
 	call 	do_flag_zn  			# set the negative and zero flags
-	movl 	%ebp, %esp 				# Copy stack pointer to ESP
-	popl 	%ebp					# Restore base pointer
-	ret								# Return from subroutine
+	movl 	%ebp, %esp 			# Copy stack pointer to ESP
+	popl 	%ebp				# Restore base pointer
+	ret					# Return from subroutine
 
    # ***********************************************************************
    # * Subroutine name : INC (Increment memory by one)                     	*
@@ -457,7 +461,7 @@ do_lda:
 	movl 	8(%ebp) , %ecx		# move the addres of the source to the %ecx
 	movb 	(%ecx), %bl 		# move the value to %bl
 	movb	%bl, A			# Move the value into the accumulator
-	movb 	%bl, %al	
+	movl 	%ebx, %eax	
 	call	do_flag_zn		# correct the zero and negative flags
 
 	movl 	%ebp, %esp 		# copy stack pointer to ESP
@@ -507,9 +511,10 @@ do_lsr:
 	pushl 	%ebp                    #   push base pointer
 	movl    %esp, %ebp              #   copy stack pointer
 	
-	movl 	$0, %ebx 		# clear %ebx
+	movl 	$0, %eax 		# clear %ebx
 	movl 	8(%ebp) , %ecx		# move the addres of the source to the %ecx
-	movb 	(%ecx), %bl 		# move the value to %bl
+	movb 	(%ecx), %al 		# move the value to %bl
+	####### intel flags hoeven niet geset te worden.....?
 	call 	 isset_flag_carry 	# check if the carry flag is set , returns in %eax 
 	cmp 	$0, %eax		# if there isn't a carry jump else just do ROL	
 	je 	carry_off_lsr 		# else just rsll
@@ -524,10 +529,10 @@ carry_off_lsr:
 		
 do_lsr_func:
 
-	shrb 	%bl 	 	# logic shift right
-	movl 	%ebx, %eax 	# move the value of %ebx to %eax 
+	shrb 	%al 	 	# logic shift right
+	movb 	%al, (%ecx) 	# move the new value to the memory addres or accumulator	
+
 	call 	do_flag_zn 	# set the negative and zero flag
-	movl 	%ebx, (%ecx) 	# move the new value to the memory addres or accumulator	
 	jc 	lsr_carry_on    # set the carry flag
 	jmp	lsr_carry_off   # set the carry flag off
 
@@ -539,7 +544,6 @@ lsr_carry_off:
 	call 	reset_flag_carry # reset the carry flag
 
 do_end_lsr:	
-	
 	movl 	%ebp, %esp 				# copy stack pointer to ESP
 	popl 	%ebp					# restore base pointer
 	ret						# return from subroutine
@@ -691,12 +695,10 @@ do_plp:
 do_rol:
 	pushl 	%ebp
 	movl 	%esp, %ebp
-	movl	$0, %ebx
 
-	movb 	8(%ebp) , %bl 	# move the memory value to the %ebx
 	call 	 isset_flag_carry 	# check if the carry flag is set , returns in %eax 
 	cmp 	$0, %eax		# if there isn't a carry jump else just do ROL	
-	je 	carry_off_rol 		# else just roll
+	je 		carry_off_rol 		# else just roll
 
 carry_on_rol:
 	stc 				# set carry flag
@@ -707,12 +709,13 @@ carry_off_rol:
 
 rol_dorol:
 	movl 	$0, %eax 		# clear the eax register
-	movb 	A, %al 		# move accumulator to the %eax
+	movl 	8(%ebp) , %ecx 	# move the adress of the source to the %ecx
+	movb	(%ecx), %al		# move the source value to EAX
 	rolb    %al	 		# Rotate one bit left
-	movb 	%al, A 		# move the value of %eax to the accumulator
+	movb 	%al, (%ecx) 		# move the value of %eax back to where it came from
 
 	call 	do_flag_zn 		# set the negative and zero flag
-	jc	rol_set_c64_carry	# if intel carry flag is true
+	jnc		rol_unset_c64_carry	# if intel carry flag is false
 
 rol_set_c64_carry:
 	call    set_flag_carry			# sets the c64 carry flag
@@ -742,32 +745,32 @@ rol_end:
 do_ror:
 	pushl 	%ebp
 	movl 	%esp, %ebp
-	movl	$0, %ebx
-
-	movb 	8(%ebp) , %bl 	# move the memory value to the %ebx
+	
 	call 	 isset_flag_carry 	# check if the carry flag is set , returns in %eax 
 	cmp 	$0, %eax		# if there isn't a carry jump else just do ROL	
-	je 	carry_off_ror 		# else just roll
+	je 		carry_off_ror 		# else just roll
 
 carry_on_ror:
-	stc
+	stc							# set intel carry flag
 	jmp	ror_doror	
 
 carry_off_ror:
-	clc
+	clc							# clear intel carry flag
 
 ror_doror:
-	movl 	$0, %eax 		# clear the eax register
-	movb 	A, %al 		# move accumulator to the %eax
-	rorb    %al	 		# Rotate one bit left
-	movb 	%al, A 		# move the value of %eax to the accumulator
+	movl 	$0, %eax 			# clear the eax register
+	movl 	8(%ebp) , %ecx 		# move the adres of the source to the %ecx
+	movb	(%ecx), %al			# move the value of the source to %eax
+	
+	rorb    %al	 				# Rotate one bit left
+	movb 	%al, (%ecx)			# move the value of %eax to the accumulator
 
-	call 	do_flag_zn 		# set the negative and zero flag
-	jc	ror_set_c64_carry	# if intel carry flag is true
+	call 	do_flag_zn 			# set the negative and zero flag
+	jnc		ror_unset_c64_carry	# if intel carry flag is false
 
 ror_set_c64_carry:
-	call    set_flag_carry			# sets the c64 carry flag
-	jmp	ror_end			# jump to end
+	call    set_flag_carry		# sets the c64 carry flag
+	jmp	ror_end					# jump to end
 
 ror_unset_c64_carry:
 	call 	reset_flag_carry		# resets the c64 carry flag
@@ -835,56 +838,47 @@ do_rts:
 do_sbc: 		
 	pushl 	%ebp                    	#   push base pointer
 	movl    %esp, %ebp              	#   copy stack pointer
-	
-	call	isset_flag_carry		# 
-	jz	sbc_reset_x86carry		# reset x86 carry to false
-	stc					# set x86 carry
+		
+	call	isset_flag_carry		# check if the carry flag is set 
+	cmp 	$0, %eax 			# compare with zero to check if the carry flag is set
+	je	sbc_set_borrow			# if carry is false, borrow should be true
+	clc					# else, borrow should be false
 	jmp	sbc_sub				# jump to next
 
-sbc_reset_x86carry:
-	clc					# set x86 carry
+sbc_set_borrow:
+	stc					# set x86 carry
 	
 sbc_sub:
+	movl 	$0, %ecx 			# clear ecx
 	movl	$0, %ebx			# clear ebx
-	movl	8(%ebp),%ecx			# copy memory content to temp
-	movb	(%ecx), %bl
+	movl	8(%ebp),%ecx			# move the memory addres to the %ecx
+	movb	(%ecx), %bl 			# move the value to the ebx register 
 	sbbb	%bl, A				# substract A and memory content with carry/borrow, store result in A
 	
-	jnc	sbc_carry_flag_off		# jmp if carry
+	pushf					# push processor status, so it won't get changed by other subroutines
+	jnc		sbc_carry_flag_off	# jmp if not carry
 	call	set_flag_carry			# set carry flag to false
-	jmp	sbc_overflow			# jump to next
+	jmp		sbc_overflow		# jump to next
 	
 sbc_carry_flag_off:
 	call	reset_flag_carry		# set carry flag to false
 	
 sbc_overflow:
-	jno	sbc_overflow_flag_off		# jmp if x86 overflow not
+	popf					# restore processor status
+	jno		sbc_overflow_flag_off	# jmp if x86 overflow not
 	call	set_flag_overflow		# set zero flag to false
-	jmp	sbc_negative			# jump to next
+	jmp		sbc_flags		# jump to next
 
 sbc_overflow_flag_off:
 	call	reset_flag_overflow		# set zero flag to true
 	
-sbc_negative:
-	cmp	$0,A				# compare 0 with A
-	jge	sbc_negative_flag_off		# A >= 0
-	call	set_flag_negative		# set negative flag to true
-	jmp	sbc_zero			# jump to next
+sbc_flags:
+	movl 	$0, %eax 			# clear the eax
+	movb 	A, %al 				# move the result 		
+	call 	do_flag_zn 			# set the zero and negative flag
 
-sbc_negative_flag_off:
-	call	reset_flag_negative		# set negative flag to false
-	
-sbc_zero:
-	cmp	$0,A				# compare 0 with A
-	jne	sbc_zero_flag_off		# A != 0
-	call	set_flag_zero			# set zero flag to true
-	jmp	sbc_end				# jump to next
-
-sbc_zero_flag_off:
-	call	reset_flag_zero			# set zero flag to false
-	
 sbc_end:
-	movl 	%ebp, %esp     	# Clear local variables from stack.	
+	movl 	%ebp, %esp 		    	# Clear local variables from stack.	
 	popl 	%ebp				# restore base pointer
 	ret					# return from subroutine	
 
@@ -995,7 +989,7 @@ do_sty:
 	movl	$0, %ebx 		# clear the ebx register
 	movl 	8(%ebp), %ecx 		# move the memory address to ecx
 	movb	Y, %bl			# load Y in EBX
-	movl	%ebx, (%ecx)	# store it in memory
+	movb	%bl, (%ecx)	# store it in memory
 
 	movl 	%ebp, %esp     		# Clear local variables from stack.
 	popl 	%ebp           		# Restore caller’s base pointer.
